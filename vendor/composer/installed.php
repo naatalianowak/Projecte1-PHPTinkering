@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
-        'name' => 'nerea/phptinkering',
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
-        'reference' => 'bd95104c5cdd7805cb2f243fdb630f63721a001c',
+        'name' => 'natalia/phptinkering',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '4bea2dc6dcf968a94e6c500a26abfdd851a1d8b8',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -19,10 +19,10 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
-        'nerea/phptinkering' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'reference' => 'bd95104c5cdd7805cb2f243fdb630f63721a001c',
+        'natalia/phptinkering' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '4bea2dc6dcf968a94e6c500a26abfdd851a1d8b8',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
