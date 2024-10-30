@@ -12,7 +12,6 @@ class FilmController
         // Obtener todas las películas
         $films = Film::getAll();
 
-        // Cargar la vista de índice de películas y pasar las películas
         ob_start();
         require '../resources/views/films/index.blade.php';
         return ob_get_clean();

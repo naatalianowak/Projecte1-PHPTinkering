@@ -9,22 +9,18 @@ class ShowController
     // Método para mostrar todos los shows
     public function index()
     {
-        // Obtener todas las series
         $shows = Show::getAll();
 
-        // Cargar la vista de índice de series y pasar las series
         ob_start();
-        require '../resources/views/shows/index.blade.php'; // Asegúrate de que esta vista exista
+        require '../resources/views/shows/index.blade.php';
         return ob_get_clean();
     }
 
-    // Método para mostrar el formulario de creación de un nuevo show
     public function create()
     {
         return view('shows/create');
     }
 
-    // Método para almacenar un nuevo show en la base de datos
     public function store()
     {
         $data = [
@@ -40,7 +36,6 @@ class ShowController
         
     }
 
-    // Método para mostrar el formulario de edición de un show existente
     public function edit($id)
     {
         if ($id=== null){
@@ -50,7 +45,7 @@ class ShowController
 
         $show = Show::find($id);
         if (!$show) {
-            require '../resources/views/errors/404.blade.php'; // Mostrar error 404 si no se encuentra el show
+            require '../resources/views/errors/404.blade.php';
             return;
         }
         return view('shows/edit', ['show' => $show]);
@@ -69,10 +64,9 @@ class ShowController
 
         Show::update($id, $data);
         header('Location: /shows');
-        exit; // Asegúrate de salir después de redirigir
+        exit;
     }
 
-    // Método para mostrar la confirmación de eliminación de un show
     public function delete($id)
     {
         if($id === null) {
@@ -82,17 +76,16 @@ class ShowController
         $show = Show::find($id);
 
         if (!$show) {
-            require '../resources/views/errors/404.blade.php'; // Mostrar error 404 si no se encuentra el show
+            require '../resources/views/errors/404.blade.php';
             return;
         }
         return view('shows/delete', ['show' => $show]);
     }
 
-    // Método para eliminar un show de la base de datos
     public function destroy($id)
     {
         Show::delete($id);
         header('Location: /shows');
-        exit; // Asegúrate de salir después de redirigir
+        exit;
     }
 }
